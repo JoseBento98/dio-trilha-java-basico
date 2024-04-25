@@ -1,3 +1,4 @@
+import java.util.Locale;
 import java.util.Scanner;
 
 public class ContaTerminal {
@@ -8,6 +9,7 @@ public class ContaTerminal {
        //Exibir a mensagem conta criada
 
         Scanner sc = new Scanner(System.in);
+        sc.useLocale(Locale.US);
         String resposta;
         int numeroContaCorrente;
         String agencia;
@@ -31,6 +33,7 @@ public class ContaTerminal {
                 
                 System.out.println("Por favor, digite o número de sua conta corrente: ");
                 numeroContaCorrente = sc.nextInt();
+                sc.nextLine(); // Quebra de linha pendente no buffer de entrada
                 System.out.println(" ");
     
                 System.out.println("Por favor, digite o número da Agência ! ");
@@ -39,6 +42,7 @@ public class ContaTerminal {
     
                 System.out.println("Por favor, digite a quantia de Salto Disponivel: ");
                 saldoDisponivel =sc.nextFloat();
+                sc.nextLine();
                 System.out.println(" ");
                 
                 String mensagem = String.format("Olá %s, obrigado por criar uma conta em nosso banco, sua agência é %s, conta %s e seu saldo %s já está disponível para saque",nomeCliente,agencia,numeroContaCorrente,saldoDisponivel);
